@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your GitHub Followers | RepoDetox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar"></nav>
+  <main class="main-content">
+    <section class="hero">
+      <h1>Your GitHub Followers</h1>
+      <p class="subtitle">See the list of users who are following you on GitHub.</p>
+    </section>
+    <section class="form-section" id="login-section-followers" style="display:none;">
+      <form id="followersForm" class="input-group">
+        <input type="text" id="followers_username" placeholder="GitHub Username" required autocomplete="username">
+        <input type="password" id="followers_token" placeholder="Personal Access Token" required autocomplete="current-password">
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+      <div class="info-text">
+        <small>
+          <span>🔒</span> Your token is used only in your browser for authentication.
+          <a href="https://github.com/settings/tokens?type=classic" target="_blank" rel="noopener">How to get a token?</a>
+        </small>
+      </div>
+    </section>
+    <section id="followers-stats-section" class="stats-section" style="display:none;">
+      <div class="stats-card">
+        <div><span class="stat-label">Followers</span><span class="stat-value" id="stat-followers-pg">-</span></div>
+      </div>
+    </section>
+    <section id="followers-results-section" style="display:none;">
+      <div class="search-filter-group">
+        <input type="text" id="followersUserSearch" placeholder="Search followers..." />
+      </div>
+      <div id="followers_loading" class="loading">Loading...</div>
+      <div id="followers_result"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>© 2025 RepoDetox - Made with ❤️ by Mbitu</span>
+  </footer>
+  <script src="theme.js"></script>
+  <script src="navbar.js"></script>
+  <script src="followers.js"></script>
+</body>
+</html>

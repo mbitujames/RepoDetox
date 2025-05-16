@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings | RepoDetox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar"></nav>
+  <main class="main-content">
+    <section class="settings-hero">
+      <h1>Settings</h1>
+      <div class="settings-content">
+        <p>
+          RepoDetox runs 100% in your browser.<br>
+          For advanced rate limits, use a GitHub Personal Access Token with <code>user:follow</code> scope.
+        </p>
+        <ul>
+          <li>🔑 <b>Token Usage:</b> Paste your token once and RepoDetox will remember it for this device.</li>
+          <li>🔄 <b>Data:</b> No data is stored or sent to any server except GitHub.</li>
+          <a href="mailto:mbitujames@outlook.com?subject=RepoDetox%20Feedback" target="_blank" rel="noopener">Send feedback or report bugs!</a>
+        </ul>
+        <div style="margin-top:2rem;">
+          <button class="btn-primary" id="clear-auth-btn">Clear Authentication Data</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>© 2025 RepoDetox - Made with ❤️ by Mbitu</span>
+  </footer>
+  <script src="theme.js"></script>
+  <script src="navbar.js"></script>
+  <script>
+    document.getElementById('clear-auth-btn').onclick = () => {
+      localStorage.removeItem('repodetox_token');
+      localStorage.removeItem('repodetox_username');
+      sessionStorage.removeItem('repodetox_token');
+      sessionStorage.removeItem('repodetox_username');
+      alert('Authentication data cleared!');
+    };
+  </script>
+</body>
+</html>

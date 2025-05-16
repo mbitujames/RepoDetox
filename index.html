@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepoDetox | Unfollow Non-Followers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar"></nav>
+  <main class="main-content">
+    <section class="hero">
+      <h1>RepoDetox</h1>
+      <p class="subtitle">
+        Detox your GitHub by unfollowing users who don't follow you back.<br>
+        View, search, filter, and mass unfollow—clean your repo social graph!
+      </p>
+    </section>
+    <section class="form-section" id="login-section">
+      <form id="userForm" class="input-group">
+        <input type="text" id="username" placeholder="GitHub Username" required autocomplete="username">
+        <input type="password" id="token" placeholder="Personal Access Token" required autocomplete="current-password">
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+      <div class="info-text">
+        <small>
+          <span>🔒</span> Your token is used only in your browser for authentication.
+          <a href="https://github.com/settings/tokens?type=classic" target="_blank" rel="noopener">How to get a token?</a>
+        </small>
+      </div>
+    </section>
+    <section id="stats-section" class="stats-section" style="display:none;">
+      <div class="stats-card">
+        <div><span class="stat-label">Followers</span><span class="stat-value" id="stat-followers">-</span></div>
+        <div><span class="stat-label">Not Following Back</span><span class="stat-value" id="stat-nonfollowers">-</span></div>
+      </div>
+    </section>
+    <section id="results-section" style="display:none;">
+      <div class="search-filter-group">
+        <input type="text" id="userSearch" placeholder="Search users..." />
+        <select id="filterOption">
+          <option value="all">All</option>
+          <option value="recent">Recently Followed</option>
+          <option value="oldest">Oldest Followed</option>
+        </select>
+      </div>
+      <div class="mass-action-bar" id="mass-action-bar" style="display:none;">
+        <label><input type="checkbox" id="selectAll"> Select All</label>
+        <button class="btn-mass-unfollow" id="massUnfollowBtn" disabled>Unfollow Selected</button>
+      </div>
+      <div id="loading" class="loading">Loading...</div>
+      <div id="result"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>© 2025 RepoDetox - Made with ❤️ by Mbitu</span>
+  </footer>
+  <script src="theme.js"></script>
+  <script src="navbar.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
